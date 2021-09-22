@@ -152,5 +152,5 @@ except Exception as e:
         sendDis(str("Error Exiting: " + str(e)), main_config, "crash_latest.log")
     raise e
 finally:
-    if platform.system() == "Linux":
+    if platform.system() == "Linux" and os.path.isfile(pid_file_path):
         os.remove(pid_file_path)
